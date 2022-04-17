@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content="rgba(75, 0, 130, 1)" />
+        <meta name="keywords" content="Document" />
+        <meta name="description" content="Your Description..." />
+        <link rel="stylesheet" href="resources/css/style.css" />
+        <!-- <link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon"> -->
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 align="center">Start typing!</h1>
+            <input type="text" id="input" autofocus placeholder="type" />
+            <div class="text-wrapper">
+                <p class="text" id="text">
+                    <!-- A paragraph is a self-contained unit of discourse in writing
+                    dealing with a particular point or idea. A paragraph
+                    consists of one or more sentences. Though not required by
+                    the syntax of any language, paragraphs are usually an
+                    expected part of formal writing, used to organize longer
+                    prose. -->
+                    Loading...
+                </p>
+            </div>
+            <div class="drawer">
+                <div class="wpm-drawer">
+                    Time Left: <span id="time">60</span>
+                </div>
+                <div class="wpm-drawer">WPM: <span id="wpm">0</span></div>
+                <div class="cpm-drawer">CPM: <span id="cpm">0</span></div>
+                <div class="mistype-drawer">
+                    Mistypes: <span id="mistypes">0</span>
+                </div>
+                <button id="next-button" type="button">Next Paragraph</button>
+            </div>
+        </div>
+        <script src="resources/js/main.js" />
+    </body>
+</html>

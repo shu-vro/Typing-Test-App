@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    --bg-color: #00b86b;
+    --bg-color-light: #17ff9e;
+    --bg-color-hard: #007745;
+    --wrong: #ff6e6e;
+    --blink-width: 10%;
+    --height: 300px;
+    background: var(--bg-color);
+}
+
+::selection {
+    background: var(--bg-color);
+    color: white;
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    width: 700px;
+    font-size: 20px;
+}
+
+.container input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+.container .text-wrapper {
+    max-width: 550px;
+    max-height: var(--height);
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin: auto;
+    text-align: justify;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.container .text-wrapper .text {
+    position: relative;
+    max-height: var(--height);
+    overflow-y: scroll;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container .text-wrapper .text span {
+    position: relative;
+}
+
+.container .text-wrapper .text .correct {
+    background: var(--bg-color-light);
+}
+
+.container .text-wrapper .text .incorrect {
+    background: var(--wrong);
+}
+
+.container .text-wrapper .text .next {
+    background: linear-gradient(
+        0deg,
+        var(--bg-color-light) 0 var(--blink-width),
+        white var(--blink-width) 100%
+    );
+
+    animation: blink 1s linear 0s infinite forwards;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        --blink-width: 10%;
+    }
+    51%,
+    100% {
+        --blink-width: 0%;
+    }
+}
+
+.container .text-wrapper .text::-webkit-scrollbar {
+    width: 0;
+}
+
+.container .drawer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 50px;
+    margin: 10px 20px;
+    text-align: center;
+    border: 1px solid #4b4b4b;
+    border-radius: 15px;
+}
+
+.container .drawer #next-button {
+    border-radius: 7px;
+    background: var(--bg-color);
+    border: none;
+    font-size: 20px;
+    padding: 7px 14px;
+    color: white;
+    cursor: pointer;
+    box-shadow: inset 3px 3px 10px var(--bg-color-light),
+        inset -3px -3px 10px var(--bg-color-hard);
+}
+
+.container .drawer #next-button:active {
+    box-shadow: inset 3px 3px 10px var(--bg-color-hard),
+        inset -3px -3px 10px var(--bg-color-light);
+}
